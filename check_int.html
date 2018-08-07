@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check integer</title>
+
+	<script type="text/javascript">
+		function is_integer() {
+			var n = Number(document.getElementById('input').value);
+			console.log(typeof(n));
+			var res = Number.isInteger(n);
+			alert(res);
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label>Input:</label>
+		<input type="text" name="input" id="input" />
+		<input type="submit" name="submit" onclick="is_integer();" value="Check">
+
+	</form>
+</body>
+</html>

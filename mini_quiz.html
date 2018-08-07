@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini quiz app</title>
+	<script type="text/javascript">
+		(function() {
+				//Function constructor
+				var quiz = function(questions) {
+				 	this.questions = questions;
+				 	this.qindex = 0; 
+				 	this.ans = '';
+				 	this.score = 0;
+				 	this.getQuestion = function() {
+				 		qno = this.questions[this.qindex].id;
+				 		question = this.questions[this.qindex].question;
+				 		console.log(qno + ") " + question);
+				 	}
+				 	this.getQuestionOptions = function() {
+				 		options = this.questions[this.qindex].options;
+				 		for(var key in options) {
+						    var values = options[key];
+						    console.log(key + ') ' + options[key]);
+						}
+						//console.log(options[0].a);
+				 	}
+
+				 	this.getInput = function() {
+				 		this.ans = prompt("Enter your answer")
+				 		console.log(this.ans);
+				 	}
+
+				 	this.checkAnswer = function() {
+				 		answer = this.questions[this.qindex].answer;
+				 		if(this.ans === answer) {
+				 			console.log("Correct");
+				 			this.score++;
+				 		} else {
+				 			console.log("Wrong");
+				 		}
+				 		this.qindex++;
+				 	}
+				}
+
+				var questions = [
+						{
+							id:1,
+							question: "What is the captital of India",
+							options: 
+								{
+									a: "Bengalore",
+									b: "Mumbai",
+									c: "Surat",
+									d: "Delhi"
+								},
+							answer: "Delhi"
+						},
+						{
+							id:2,
+							question: "What is national bird of India",
+							options: 
+								{
+									a: "Pigeon",
+									b: "Dove",
+									c: "Peacock",
+									d: "Crow"
+								},
+							answer: "Peacock"
+						},
+				 		{
+							id:3,
+							question: "What is national animal of India",
+							options: 
+								{
+									a: "Tiger",
+									b: "Lion",
+									c: "Cat",
+									d: "Cow"
+								},
+							answer: "Tiger"
+						}
+				]
+
+				var answers = 
+
+				qz = new quiz(questions);
+				
+
+				function run() {
+					while(qz.qindex < questions.length) {
+						qz.getQuestion();
+						qz.getQuestionOptions();
+						qz.getInput();
+						qz.checkAnswer();
+					}
+					console.log("Your score :" + qz.score);
+				}
+
+				run();
+		})();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

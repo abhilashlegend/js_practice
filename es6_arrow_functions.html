@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow functions</title>
+	<script type="text/javascript">
+		const years = [1990,1965,1982,1937];
+
+		//ES5
+		var ages5 = years.map(function(cur) {
+			return 2018 - cur;
+		})
+
+		console.log(ages5);
+
+		let ages6 = years.map(cur => 2018 - cur);
+		console.log(ages6);
+
+		ages6 = years.map((cur, index) => `We have ${cur} at ${index}`);
+		console.log(ages6);
+
+		ages6 = years.map((cur, index) => {
+			now = new Date();
+			console.log(now.getFullYear());
+			return `We have ${cur} at ${index} and current year is ${now.getFullYear()}`
+		});
+
+		console.log(ages6);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tip calculator</title>
+	<script type="text/javascript">
+		function tipcalc(bill) {
+			var percent;
+			if(bill < 50) {
+				percent = .2;
+			}
+			if(bill >= 50 && bill <= 200) {
+				percent = .15;
+			}
+			if(bill > 200) {
+				percent = .1;
+			}
+			return bill * percent;
+		}
+
+		tipsArr = [];
+		netAmt = [];
+		tipsArr[0] = tipcalc(124);
+		tipsArr[1] = tipcalc(48);
+		tipsArr[2] = tipcalc(268);
+		console.log(tipsArr);
+		netAmt[0] = tipsArr[0] + 124;
+		netAmt[1] = tipsArr[1] + 48;
+		netAmt[2] = tipsArr[2] + 268;
+		console.log(netAmt);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

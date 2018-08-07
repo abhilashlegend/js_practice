@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions returning functions</title>
+	<script type="text/javascript">
+		function interviewQuestion(job) {
+			if(job == 'designer') {
+				return function(name) {
+					console.log(name + " Please tell me what is UX ?");
+				}
+			} else if(job == 'teacher') {
+				return function(name) {
+					console.log("Hello " + name + " what do you teach ?");
+				}
+			}
+			else {
+				return function(name) {
+					console.log("What do you do " + name);
+				}
+			}
+		}
+
+		var teacherQuestion = interviewQuestion('teacher');
+		teacherQuestion("James");
+		var designerQuestion = interviewQuestion('designer');
+		designerQuestion("Roy");
+		designerQuestion("Jessica");
+		designerQuestion("Mary");
+		teacherQuestion("Kelly");
+
+		interviewQuestion('doctor')('rohit');
+	</script>
+</head>
+<body>
+
+</body>
+</html>

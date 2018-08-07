@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rest parameters</title>
+	<script type="text/javascript">
+		//ES5 
+		/*function isFullAges5() {
+			var argsArr = Array.prototype.slice.call(arguments);
+
+			argsArr.forEach(function(cur) {
+				console.log((2018 - cur) >= 18);
+			})
+		}
+
+		isFullAges5(1880,1997,2016);*/
+
+		//ES6
+		/*function isFullAges6(...years) {
+			years.forEach(cur => console.log((2018 - cur) >= 18));
+		}
+
+		isFullAges6(1880,1997,2016);*/
+
+		//ES5
+		function isFullAges5(limit) {
+			var argsArr = Array.prototype.slice.call(arguments, 1);
+
+			argsArr.forEach(function(cur) {
+				console.log((2018 - cur) >= limit);
+			})
+		}
+
+		//isFullAges5(21,1988,2006,2016,2011,1992);
+
+
+		//ES6 
+		function isFullAges6(limit, ...years) {
+			years.forEach(cur => console.log((2018 - cur) >= limit));
+		}
+
+		isFullAges6(21,1988,2006,2016,2011,1992);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

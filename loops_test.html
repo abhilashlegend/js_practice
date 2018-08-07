@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loops</title>
+	<script type="text/javascript">
+		tipsApp = {
+			bills: [],
+			tips: [],
+			netAmt: [],
+			calculateTip: function() {
+				totalBills = this.bills.length;
+				var percent;
+				for(var i = 0; i < totalBills; i++) {
+					if(this.bills[i] < 50) {
+						percent = .2;
+						this.tips.push(this.bills[i] * percent);
+					} else if (this.bills[i] >= 50 && this.bills[i] <= 200) {
+						percent = .15;
+						this.tips.push(this.bills[i] * percent);
+					} else {
+						percent = .1;
+						this.tips.push(this.bills[i] * percent);
+					}
+					
+				}
+				return this.tips;
+			},
+			calculateNetAmount: function() {
+				totalBills = this.bills.length;
+				for(var i = 0; i < totalBills; i++) {
+					this.netAmt.push(this.bills[i] + this.tips[i]);
+				}
+				return this.netAmt;
+			}
+		}
+		var john = tipsApp;
+		john.bills = [124,48,268,180,42];
+		console.log(john.bills)
+		console.log(john.calculateTip());
+		console.log(john.calculateNetAmount());
+	</script>
+</head>
+<body>
+
+</body>
+</html>

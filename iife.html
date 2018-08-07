@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Immediately invoked function expression (IIFE)</title>
+	<script type="text/javascript">
+		(function() {
+			var score = Math.random() * 10;
+			console.log(score >= 5);
+		})();
+
+
+		(function(goodluck) {
+			var score = Math.random() * 10;
+			console.log(score >= 5 - goodluck);
+		})(5);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asynchronus example</title>
+	<script type="text/javascript">
+		const second = () => {
+			setTimeout(() => {
+				console.log("Hello from second");
+			})
+		}
+
+		const first = () => {
+			console.log("Hi there");
+			second();
+			console.log("End");
+		}
+
+		first();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

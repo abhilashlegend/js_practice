@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX calls using fetch</title>
+	<script type="text/javascript">
+		function getWeather(worid) { 
+			fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${worid}/`).then(result => {
+			console.log(result);
+			return result.json();
+			})
+			.then(data => {
+				const today = data.consolidated_weather[0];
+				console.log(`Temperature in ${data.title} stay between ${today.min_temp} and ${today.max_temp}.`);
+			})
+			.catch(error => console.log(error));
+
+		}
+
+		getWeather(2487956)
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Average calculation</title>
+	<script type="text/javascript">
+		var johnTeamAvg = (89 + 120 + 103) / 3;
+		console.log("Average score of john's " + johnTeamAvg);
+		var mikeTeamAvg = (116 + 94 + 123) / 3;
+		console.log("Average score of Mike's " + mikeTeamAvg);
+		var maryTeamAvg = (97 + 134 + 105) / 3;
+		console.log("Average score of Mary's " + maryTeamAvg);
+
+		if(johnTeamAvg > mikeTeamAvg && johnTeamAvg > maryTeamAvg) {
+			console.log("John team wins");
+		}
+		else 
+			if(mikeTeamAvg > johnTeamAvg && mikeTeamAvg > maryTeamAvg) {
+				console.log("Mike team wins");
+			}
+			else if(maryTeamAvg > johnTeamAvg && maryTeamAvg > mikeTeamAvg) {
+				console.log("Mary's team win");
+			}
+			else {
+				console.log("Its a Draw");
+			}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

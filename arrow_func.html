@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Section 7: Get Ready for the Future: ES6 / ES2015</title>
+        
+        <style>
+            .box {
+                width: 200px;
+                padding: 25px 80px;
+                text-align: center;
+                font-size: 30px;
+                margin-top: 30px;
+            }
+            
+            .green { background-color: green; }
+            .blue { background-color: dodgerblue; }
+            .orange { background-color: orangered; }
+            
+        </style>
+        
+    </head>
+
+    <body>
+        <h1>Section 7: Get Ready for the Future: ES6 / ES2015</h1>
+        
+        <div class="box green">I'm green!</div>
+        <div class="box blue">I'm blue!</div>
+        <div class="box orange">I'm orange!</div>
+        
+        <script type="text/javascript">
+            const box1 = {
+                color: 'green',
+                position: 1,
+                clickMe: function() {
+                    document.querySelector('.green').addEventListener('click', () => {
+                        let str = `This is box number ${this.position} and it is ${this.color}`;
+                        alert(str);
+                    });
+                }
+            }
+
+            box1.clickMe();
+
+            function Person(name) {
+                this.name = name;
+            }
+
+            Person.prototype.myFriends5 = function(friends) {
+                var arr = friends.map(function(el) {
+                    return this.name + ' is friends with ' + el;
+                }.bind(this));
+                console.log(arr);
+            }
+
+            var friends = ['Bob','Mark','Jonas'];
+            new Person("Jane").myFriends5(friends);
+
+            //ES6
+            Person.prototype.myFriends6 = function(friends) {
+                let arr = friends.map(el => `${this.name} is friends with ${el}`);
+                console.log(arr);
+            }
+
+           new Person('Mike').myFriends6(friends);
+        </script>
+    </body>
+</html>

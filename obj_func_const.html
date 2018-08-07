@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Objects using function constructor</title>
+	<script type="text/javascript">
+		//Function constructor
+		var Person = function(name, dob, job) {
+			this.name = name;
+			this.dob = dob;
+			this.job = job;
+			this.calculateAge = function() {
+				return 2018 - dob;
+			}
+		}
+
+		Person.prototype.message = function() {
+			console.log("Hi " + this.name);
+		}
+
+		var john = new Person('John',1990,'Teacher');
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Default Parameters</title>
+	<script type="text/javascript">
+		//ES5
+		/*function PersonSmith(firstName, yearOfBirth, lastName, nationality) {
+			lastName === undefined ? lastName = 'Smith' : lastName;
+			nationality === undefined ? nationality = 'American' : nationality;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.yearOfBirth = yearOfBirth;
+			this.nationality = nationality
+		}*/
+
+		//ES6
+		function PersonSmith(firstName, yearOfBirth, lastName='Smith',nationality='American') {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.yearOfBirth = yearOfBirth;
+			this.nationality = nationality;
+		}
+
+		var john = new PersonSmith('John',1990);
+		console.log(john);
+		var jane = new PersonSmith('Jane',2001,'Miller','British');
+		console.log(jane);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

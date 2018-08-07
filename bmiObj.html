@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI with object</title>
+	<script type="text/javascript">
+		var john = {
+			firstName 		: "John",
+			lastName 		: "Smith",
+			getFullName 	: function() {
+								this.fullName = this.firstName + ' ' + this.lastName;
+								return this.fullName;
+								},
+			mass			: 75,
+			height			: 0.14224,
+			getBmi 			: function() {
+								this.bmi = this.mass / (this.height * this.height);
+								return this.bmi;
+								}
+		};
+		
+		var mark = {
+			firstName 		: "Mark",
+			lastName 		: "Clinton",
+			getFullName 	: function() {
+								this.fullName = this.firstName + ' ' + this.lastName;
+								return this.fullName;
+								},
+			mass			: 55,
+			height			: 0.1397,
+			getBmi 			: function() {
+								this.bmi = this.mass / (this.height * this.height);
+								return this.bmi;
+								}
+		};
+		
+		john.getBmi();
+		mark.getBmi();
+
+		if(john.bmi > mark.bmi) {
+			console.log(john.getFullName() + " has BMI " + john.bmi + " greater than " + mark.getFullName() );
+		}
+		else if(mark.bmi > john.bmi) {
+			console.log(mark.getFullName() + " has BMI " + mark.bmi + " greater than " + john.getFullName() );
+		}
+		 else {
+		 	console.log("johns BMI :" + john.bmi + "\n");
+		 	console.log("Marks BMI :" + mark.bmi + "\n");
+		 	console.log(john.getFullName() + " and " + mark.getFullName() + " have equal BMIs");
+		}
+
+	
+		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
